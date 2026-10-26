@@ -60,8 +60,10 @@ DATASETS = {
 KEEP_COLUMNS = {
     "cashflow_bid": ["settlementDate", "settlementPeriod", "bmUnit", "bmUnitType", "leadPartyName", "totalCashflow"],
     "cashflow_offer": ["settlementDate", "settlementPeriod", "bmUnit", "bmUnitType", "leadPartyName", "totalCashflow"],
-    "volume_bid": ["settlementDate", "settlementPeriod", "bmUnit", "bmUnitType", "totalVolumeAccepted"],
-    "volume_offer": ["settlementDate", "settlementPeriod", "bmUnit", "bmUnitType", "totalVolumeAccepted"],
+    # The volume endpoint (DISPTAV) returns each unit four times, one row per
+    # system-price calculation stage in ``dataType``; transform picks one.
+    "volume_bid": ["settlementDate", "settlementPeriod", "bmUnit", "bmUnitType", "dataType", "totalVolumeAccepted"],
+    "volume_offer": ["settlementDate", "settlementPeriod", "bmUnit", "bmUnitType", "dataType", "totalVolumeAccepted"],
     "system_prices": [
         "settlementDate", "settlementPeriod", "startTime", "systemSellPrice", "systemBuyPrice",
         "netImbalanceVolume", "totalAcceptedOfferVolume", "totalAcceptedBidVolume",
@@ -84,7 +86,7 @@ def records_to_frame(dataset: str, records: list[dict]) -> pl.DataFrame:
 def _dtype(col: str) -> pl.DataType:
     if col == "settlementPeriod":
         return pl.Int32
-    if col in {"settlementDate", "startTime", "bmUnit", "bmUnitType", "leadPartyName"}:
+    if col in {"settlementDate", "startTime", "bmUnit", "bmUnitType", "leadPartyName", "dataType"}:
         return pl.Utf8
     return pl.Float64
 
@@ -118,7 +120,10 @@ async def _fetch_day(
     path = cache_dir / dataset / f"{day.isoformat()}.parquet"
     fresh = day >= date.today() - timedelta(days=REFRESH_DAYS)
     if path.exists() and not fresh:
-        return pl.read_parquet(path)
+        cached = pl.read_parquet(path)
+        # Files cached before a column was added to KEEP_COLUMNS are refetched.
+        if set(KEEP_COLUMNS[dataset]) <= set(cached.columns):
+            return cached
     payload = await _get_json(client, DATASETS[dataset].url(day), sem)
     frame = records_to_frame(dataset, payload.get("data") or [])
     path.parent.mkdir(parents=True, exist_ok=True)
