@@ -138,7 +138,8 @@ def event_daily(daily: pl.DataFrame, start: date, end: date, event_start: date, 
            edgecolor=style.BACKGROUND, linewidth=1)
     _millions(ax)
     ax.xaxis.set_major_locator(mdates.DayLocator(interval=2))
-    ax.xaxis.set_major_formatter(mdates.DateFormatter("%-d %b"))
+    # %-d is glibc-only; build the unpadded day by hand so it works on Windows too
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{mdates.num2date(v).day} {mdates.num2date(v):%b}"))
     _caption(fig, caption)
     _legend(fig, ax.get_legend_handles_labels())
     _source(fig)
@@ -161,7 +162,7 @@ def focus_day(hh: pl.DataFrame, day: date, out_dir: Path) -> Path:
     ticks = list(range(1, len(sp) + 1, 4))
     ax2.set_xticks(ticks, [f"{(t - 1) // 2:02d}:{'30' if (t - 1) % 2 else '00'}" for t in ticks])
     ax2.set_xlim(0.4, len(sp) + 0.6)
-    _caption(fig, f"Balancing Mechanism payments per half hour, {day:%-d %B %Y}, £k")
+    _caption(fig, f"Balancing Mechanism payments per half hour, {day.day} {day:%B %Y}, £k")
     _legend(fig, ax.get_legend_handles_labels())
     _source(fig)
     return _save(fig, out_dir, f"05_focus_day_{day.isoformat()}")
