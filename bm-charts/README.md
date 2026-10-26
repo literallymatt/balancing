@@ -33,16 +33,25 @@ Useful options:
 
 ## What you get in `output/`
 
-| File | Shows |
+| Path | What it is |
 |---|---|
-| `01_monthly_bid_offer_costs.png` | Money NESO paid out each month, offers and bids stacked |
-| `02_monthly_bid_offer_volumes.png` | Accepted offer volume above the line, bid volume below |
-| `03_bid_payments_by_fuel.png` | Who is paid to turn down, by technology (wind shows the constraint story) |
-| `04_daily_2026_06.png` | Daily payments through June 2026 with the heatwave shaded |
-| `05_focus_day_2026-06-23.png` | Half-hourly payments on the focus day, with the system price below |
+| `report.html` | Every chart on one page, with links to its data. Charts are embedded, so the file can be sent on its own |
+| `bm_charts_data.xlsx` | The data behind every chart, one sheet each, plus an About sheet with definitions |
+| `charts/` | Each chart as a PNG (for slides) and an SVG |
+| `data/` | One CSV per chart, holding exactly the numbers it plots, in the chart's units |
+| `data/full/` | Full-detail tables in £ and MWh, including the `paid_back_*` and `net_*` columns |
 
-Every chart also comes as an SVG, and the numbers behind them are in CSVs
-next to them. The console prints calendar-year totals and the heatwave days.
+The charts:
+
+| Chart | Shows |
+|---|---|
+| `01_monthly_bid_offer_costs` | Money NESO paid out each month, offers and bids stacked |
+| `02_monthly_bid_offer_volumes` | Accepted offer volume above the line, bid volume below |
+| `03_bid_payments_by_fuel` | Who is paid to turn down, by technology (wind shows the constraint story) |
+| `04_daily_2026_06` | Daily payments through June 2026 with the heatwave shaded |
+| `05_focus_day_2026-06-23` | Half-hourly payments on the focus day, with the system price below |
+
+The console prints calendar-year totals and the heatwave days.
 
 ## Data and definitions
 
@@ -57,8 +66,8 @@ A unit's cashflow is accepted volume times price, positive when NESO pays the
 unit. Offers are almost always paid. Bids go both ways: a gas plant with a
 positive bid price pays NESO back to turn down, while a wind farm with a
 negative bid price is paid to turn down. The charts show **money paid out**
-(the positive cashflows) on each side. The CSVs also hold `paid_back_*` and
-`net_*` columns.
+(the positive cashflows) on each side. The CSVs in `data/full/` also hold
+`paid_back_*` and `net_*` columns.
 
 These are **Balancing Mechanism** costs from Elexon's indicative settlement
 data. They are a large part of, but not the same as, NESO's total balancing

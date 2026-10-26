@@ -50,16 +50,36 @@ def fuel_group_expr() -> pl.Expr:
     )
 
 
+# The volume endpoint gives each unit and period four rows, one per stage of
+# the system price calculation. "Tagged" holds the total accepted volume: its
+# daily sum matches the system-wide totalAccepted{Offer,Bid}Volume published
+# with system prices, which the other three stages do not.
+ACCEPTED_VOLUME_TYPE = "Tagged"
+
+KEY = ["settlementDate", "settlementPeriod", "bmUnit"]
+
+
+def _check_unique(df: pl.DataFrame, name: str) -> None:
+    """Refuse to join on a key that repeats, which would multiply cashflows."""
+    dupes = df.height - df.select(KEY).n_unique()
+    if dupes:
+        raise ValueError(f"{name} has {dupes} repeated unit/period rows; totals would be overcounted")
+
+
 def unit_cashflows(raw: dict[str, pl.DataFrame], bmunits: pl.DataFrame | None) -> pl.DataFrame:
     """One row per unit, period and side, with paid-out and paid-back split."""
     frames = []
     for side in ("bid", "offer"):
-        cash = raw[f"cashflow_{side}"]
-        vol = raw[f"volume_{side}"].select(
-            "settlementDate", "settlementPeriod", "bmUnit", "totalVolumeAccepted"
-        )
+        # The feed occasionally repeats a row verbatim (e.g. 2023-03-25); drop
+        # exact copies, but let any conflicting repeats fail the check below.
+        cash = raw[f"cashflow_{side}"].unique(maintain_order=True)
+        vol = raw[f"volume_{side}"].filter(pl.col("dataType") == ACCEPTED_VOLUME_TYPE).select(
+            *KEY, "totalVolumeAccepted"
+        ).unique(maintain_order=True)
+        _check_unique(cash, f"cashflow_{side}")
+        _check_unique(vol, f"volume_{side}")
         frames.append(
-            cash.join(vol, on=["settlementDate", "settlementPeriod", "bmUnit"], how="left")
+            cash.join(vol, on=KEY, how="left")
             .with_columns(pl.lit(side).alias("side"))
         )
     df = pl.concat(frames, how="diagonal_relaxed")
