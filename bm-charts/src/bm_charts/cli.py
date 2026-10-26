@@ -12,7 +12,7 @@ import polars as pl
 
 matplotlib.use("Agg")
 
-from . import charts, fetch, style, transform  # noqa: E402
+from . import charts, fetch, report, style, transform  # noqa: E402
 
 
 def parse_args(argv=None) -> argparse.Namespace:
@@ -34,7 +34,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     return p.parse_args(argv)
 
 
-def run(args: argparse.Namespace, transport=None) -> list[Path]:
+def run(args: argparse.Namespace, transport=None) -> list[charts.Chart]:
     # The event and focus day always need data, even if outside --start/--end.
     start = min(args.start, args.event_start - timedelta(days=21), args.focus_day)
     end = max(args.end, args.focus_day)
@@ -56,10 +56,14 @@ def run(args: argparse.Namespace, transport=None) -> list[Path]:
     by_fuel = transform.monthly_bid_payments_by_fuel(in_range)
     hh = transform.half_hourly(units, raw["system_prices"], args.focus_day)
 
-    daily.write_csv(args.out_dir / "daily_bid_offer.csv")
-    monthly.write_csv(args.out_dir / "monthly_bid_offer.csv")
-    by_fuel.write_csv(args.out_dir / "monthly_bid_payments_by_fuel.csv")
-    hh.write_csv(args.out_dir / f"half_hourly_{args.focus_day.isoformat()}.csv")
+    # Full-detail tables (every column, in £ and MWh); each chart also writes
+    # its own CSV of just what it plots.
+    full_dir = args.out_dir / "data" / "full"
+    full_dir.mkdir(parents=True, exist_ok=True)
+    daily.write_csv(full_dir / "daily_bid_offer.csv")
+    monthly.write_csv(full_dir / "monthly_bid_offer.csv")
+    by_fuel.write_csv(full_dir / "monthly_bid_payments_by_fuel.csv")
+    hh.write_csv(full_dir / f"half_hourly_{args.focus_day.isoformat()}.csv")
 
     style.ensure_fonts(args.data_dir / "fonts")
     style.apply()
@@ -71,10 +75,12 @@ def run(args: argparse.Namespace, transport=None) -> list[Path]:
         charts.monthly_volumes(monthly, args.out_dir),
         charts.bid_payments_by_fuel(by_fuel, args.out_dir),
         charts.event_daily(daily, ev_from, ev_to, args.event_start, args.event_end, args.out_dir,
-                           f"04_daily_{ev_from:%Y_%m}",
-                           f"Daily Balancing Mechanism payments, {ev_from:%B %Y}, £m"),
+                           f"04_daily_{ev_from:%Y_%m}"),
         charts.focus_day(hh, args.focus_day, args.out_dir),
     ]
+    today = date.today()
+    workbook = report.write_workbook(outputs, args.out_dir / "bm_charts_data.xlsx", today)
+    report.write_html(outputs, args.out_dir / "report.html", today, workbook)
     _summary(monthly, daily, args)
     return outputs
 
@@ -103,5 +109,7 @@ def _summary(monthly, daily, args) -> None:
 
 def main(argv=None) -> None:
     args = parse_args(argv)
-    for path in run(args):
-        print(f"wrote {path}")
+    for chart in run(args):
+        print(f"wrote {chart.png} (data: {chart.csv})")
+    print(f"wrote {args.out_dir / 'bm_charts_data.xlsx'}")
+    print(f"wrote {args.out_dir / 'report.html'}")

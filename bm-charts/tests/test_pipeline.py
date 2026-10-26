@@ -1,6 +1,8 @@
 """Offline end-to-end test: a mock transport stands in for the BMRS API."""
 
 import random
+import re
+import zipfile
 from datetime import date
 
 import httpx
@@ -9,6 +11,7 @@ import polars as pl
 from bm_charts import cli, transform
 
 UNITS = [("T_WIND-1", "T", "WIND"), ("T_CCGT-1", "T", "CCGT"), ("V__DSR-1", "V", None)]
+STAGES = {"Original": 0.7, "Original-Priced": 0.2, "Re-priced": 0.05, "Tagged": 1.0}
 
 
 def handler(request: httpx.Request) -> httpx.Response:
@@ -34,10 +37,13 @@ def handler(request: httpx.Request) -> httpx.Response:
             price = (-70 if fuel == "WIND" else 40) if side == "bid" else 120
             rec = {"settlementDate": day, "settlementPeriod": sp, "bmUnit": unit, "bmUnitType": utype}
             if "/cashflows/" in path:
-                rec |= {"totalCashflow": vol * price, "bidOfferPairCashflows": {"negative1": vol * price}}
+                rows.append(rec | {"totalCashflow": vol * price, "bidOfferPairCashflows": {"negative1": vol * price}})
             else:
-                rec |= {"totalVolumeAccepted": vol, "pairVolumes": {"negative1": vol}}
-            rows.append(rec)
+                # Like the real DISPTAV feed: one row per price-calculation stage,
+                # and only "Tagged" carries the full accepted volume.
+                for data_type, share in STAGES.items():
+                    rows.append(rec | {"dataType": data_type, "totalVolumeAccepted": vol * share,
+                                       "pairVolumes": {"negative1": vol * share}})
     return httpx.Response(200, json={"data": rows})
 
 
@@ -47,12 +53,35 @@ def test_end_to_end(tmp_path):
         "--data-dir", str(tmp_path / "data"), "--out-dir", str(tmp_path / "out"),
     ])
     outputs = cli.run(args, transport=httpx.MockTransport(handler))
-    assert len(outputs) == 5 and all(p.exists() for p in outputs)
+    assert len(outputs) == 5
+    assert all(c.png.exists() and c.svg.exists() and c.csv.exists() for c in outputs)
+    assert (tmp_path / "out" / "bm_charts_data.xlsx").exists()
+    assert (tmp_path / "out" / "report.html").exists()
 
-    monthly = pl.read_csv(tmp_path / "out" / "monthly_bid_offer.csv")
+    # Each chart's CSV holds what it plots: monthly costs in £m, totals adding up.
+    costs = pl.read_csv(outputs[0].csv)
+    assert costs.height == 3
+    assert (costs["Offers paid out (£m)"] + costs["Bids paid out (£m)"]
+            - costs["Total paid out (£m)"]).abs().max() < 0.01
+    with zipfile.ZipFile(tmp_path / "out" / "bm_charts_data.xlsx") as z:
+        sheets = re.findall(r'<sheet name="([^"]+)"', z.read("xl/workbook.xml").decode())
+    assert sheets == ["About"] + [c.sheet for c in outputs]
+
+    full = tmp_path / "out" / "data" / "full"
+    monthly = pl.read_csv(full / "monthly_bid_offer.csv")
     assert monthly.height == 3
+    # Totals equal the raw API figures: the four volume rows per unit must not
+    # multiply cashflows, and volume is the "Tagged" stage only.
+    raw = tmp_path / "data" / "raw"
+    for side in ("bid", "offer"):
+        cash = pl.read_parquet(raw / f"cashflow_{side}" / "*.parquet").filter(
+            pl.col("settlementDate").is_between(args.start, args.end))
+        vol = pl.read_parquet(raw / f"volume_{side}" / "*.parquet").filter(
+            pl.col("settlementDate").is_between(args.start, args.end) & (pl.col("dataType") == "Tagged"))
+        assert abs(monthly[f"paid_out_{side}"].sum() - cash["totalCashflow"].clip(lower_bound=0).sum()) < 1e-6 * monthly[f"paid_out_{side}"].sum()
+        assert abs(monthly[f"volume_mwh_{side}"].sum() - vol["totalVolumeAccepted"].abs().sum()) < 1e-6 * monthly[f"volume_mwh_{side}"].sum()
     # Wind is paid to turn down, gas pays back, so bid paid_out comes from wind only.
-    fuel = pl.read_csv(tmp_path / "out" / "monthly_bid_payments_by_fuel.csv")
+    fuel = pl.read_csv(full / "monthly_bid_payments_by_fuel.csv")
     paid = fuel.group_by("fuelGroup").agg(pl.col("paid_out").sum())
     assert paid.filter(pl.col("fuelGroup") == "Gas")["paid_out"][0] == 0
     assert paid.filter(pl.col("fuelGroup") == "Wind")["paid_out"][0] > 0

@@ -32,7 +32,7 @@ FUEL_COLOURS = {
     "Hydro and pumped storage": "#2A9D8F",
     "Interconnectors": "#8A5CB8",
     "Supplier and VLP units (incl. DSR)": "#C9961A",
-    "Batteries": "#14213D",
+    "Batteries": "#B8457A",
     "Other": "#9AA8BC",
 }
 
@@ -96,4 +96,4 @@ def apply() -> None:
 
 
 def heading_font() -> dict:
-    return {"family": ["Space Grotesk", "IBM Plex Sans", "DejaVu Sans"], "weight": 600}
+    return {"fontfamily": ["Space Grotesk", "IBM Plex Sans", "DejaVu Sans"], "fontweight": 600}
