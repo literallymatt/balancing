@@ -14,9 +14,10 @@ from . import style
 from .charts import SOURCE, Chart
 
 DEFINITIONS = [
-    "Offers are paid when NESO asks a unit to increase output or cut demand.",
-    "Bids are paid when NESO asks a unit to turn down. Some bids pay NESO back instead (e.g. gas "
-    "plant saving fuel); the charts show only money paid out.",
+    "Offers: NESO pays a unit to increase output or reduce demand.",
+    "Bids: a unit reduces output or increases demand. Some are paid by NESO to do so (e.g. wind "
+    "farms behind a constraint); others pay NESO back (e.g. gas plant saving fuel). The charts "
+    "show only money paid out.",
     "These are Balancing Mechanism costs from Elexon's indicative settlement data, not NESO's total "
     "balancing costs, which also include trades outside the BM and ancillary services.",
 ]
@@ -78,9 +79,9 @@ def write_html(charts: list[Chart], path: Path, generated: date, workbook: Path)
 <link rel="stylesheet" href="{style.FONT_CSS}&display=swap">
 <style>
   body {{ margin: 0; background: {style.BACKGROUND}; color: {style.INK};
-         font: 16px/1.5 "IBM Plex Sans", Arial, sans-serif; }}
+         font: 17px/1.5 "{style.BODY_FONT}", Arial, sans-serif; }}
   main {{ max-width: 1200px; margin: 0 auto; padding: 40px 16px 64px; }}
-  h1 {{ font-family: "Space Grotesk", "IBM Plex Sans", sans-serif; color: {style.HEADING};
+  h1 {{ font-family: "{style.TITLE_FONT}", Georgia, serif; color: {style.HEADING};
         font-weight: 600; font-size: 34px; margin: 0; }}
   .meta, .links, footer {{ color: {style.MUTED}; }}
   .meta {{ margin: 6px 0 0; }}

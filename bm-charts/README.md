@@ -1,8 +1,12 @@
 # bm-charts
 
 Pulls Balancing Mechanism bid and offer data from the public Elexon BMRS
-Insights API (no API key needed) and draws charts in the style of the
-*Margins, Constraints and the Case for Flexibility* deck.
+Insights API (no API key needed) and draws deck-ready charts.
+
+The charts use a "Newsprint" style: tinted paper, a serif headline stating
+each chart's main finding (worked out from the data on every run, so check it
+reads right before it goes in a deck), values and units on the right-hand
+axis, and the same description of bids and offers in every legend.
 
 ## Run it
 
