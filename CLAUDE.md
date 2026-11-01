@@ -8,6 +8,8 @@ GitHub (`literallymatt/balancing`) is the single source of truth for this code.
   change, commit and push it to GitHub (branch and PR, merged to `main`) before
   calling the work done. Never leave changes only in a cloud container or in a
   shared project folder.
+- **Merging:** merge your own PRs as soon as the work is done and checks pass.
+  Don't wait for Matt to review or merge.
 - **Matt's machines:** before generating data locally, pull the latest
   `main` first (`git pull origin main`), then run.
   - Mac: `/Users/matt/Documents/code/balancing-github` is the clone of this repo.
