@@ -16,9 +16,17 @@ uv run bm-charts
 ```
 
 The first full run fetches every day from 1 Jan 2023 to yesterday: five
-datasets a day, about 7,000 requests, eight at a time. Expect roughly 10 to 20
-minutes. Each day is cached in `data/raw/`, so later runs only fetch new days
+datasets a day, about 7,000 requests, eight at a time. Elexon has no bulk or
+date-range version of these endpoints, so one request per dataset per day is
+the floor. Each day is cached in `data/raw/`, so later runs only fetch new days
 (plus the last five days, which Elexon revises).
+
+The day files are big, and decoding the JSON used to take longer than
+downloading it. Decoding now runs in a pool of worker processes, one per CPU
+core, while the main loop keeps downloading. Progress lines show files per
+second, so if a run looks network-bound (CPU mostly idle), try
+`--concurrency 16` and drop back if you see 429 errors. Only the "Tagged" rows
+of the volume feed are cached, which makes `data/raw/` much smaller.
 
 For a quick first look, try a shorter range:
 
