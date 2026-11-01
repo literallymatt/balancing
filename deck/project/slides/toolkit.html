@@ -1,37 +1,47 @@
-<section id="toolkit" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<section id="toolkit" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B34D12;font-weight:600">02 · NESO’s role</p>
 <h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1.1;color:#14213D">How NESO balances: energy and system</h2>
 </div>
 <div style="display:flex;gap:32px">
-<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;padding:36px 40px;border:1px solid #E2DDD0;border-top:8px solid #F2994A;border-radius:12px">
-<div style="display:flex;flex-direction:column;gap:6px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:32px 40px;border:1px solid #E2DDD0;border-top:8px solid #F2994A;border-radius:12px">
+<div style="display:flex;flex-direction:column;gap:4px">
 <h3 style="font-size:36px;font-weight:600;color:#14213D">Energy balancing</h3>
 <p style="font-size:26px;color:#B34D12;font-weight:600">Matching supply and demand</p>
 </div>
-<ul style="font-size:26px;line-height:1.4;color:#1B2638;display:flex;flex-direction:column;gap:16px">
+<ul style="font-size:26px;line-height:1.4;color:#1B2638;display:flex;flex-direction:column;gap:12px">
 <li><b>Purpose:</b> keep total supply equal to demand every second, so frequency holds near 50 Hz</li>
-<li><b>Markets:</b> wholesale trading up to Gate Closure, BM bids and offers, reserve (Quick, Slow and Balancing Reserve), frequency response and the Demand Flexibility Service</li>
+<li><b>Its own markets:</b> reserve (Quick, Slow and Balancing Reserve) and frequency response (Dynamic Containment, Moderation, Regulation)</li>
 </ul>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;padding:36px 40px;border:1px solid #E2DDD0;border-top:8px solid #7FA7D1;border-radius:12px">
-<div style="display:flex;flex-direction:column;gap:6px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:32px 40px;border:1px solid #E2DDD0;border-top:8px solid #7FA7D1;border-radius:12px">
+<div style="display:flex;flex-direction:column;gap:4px">
 <h3 style="font-size:36px;font-weight:600;color:#14213D">System balancing</h3>
 <p style="font-size:26px;color:#2F5D8A;font-weight:600">Managing grid conditions</p>
 </div>
-<ul style="font-size:26px;line-height:1.4;color:#1B2638;display:flex;flex-direction:column;gap:16px">
+<ul style="font-size:26px;line-height:1.4;color:#1B2638;display:flex;flex-direction:column;gap:12px">
 <li><b>Purpose:</b> keep power flows within network limits, and voltage and stability in range, in the right places</li>
-<li><b>Markets:</b> BM bids and offers chosen by location, constraint trades and intertrips, the Local Constraint Market, DFS constraint actions and interconnector trades</li>
+<li><b>Its own markets:</b> Local Constraint Market, constraint intertrips, and stability and voltage contracts</li>
 </ul>
 </div>
 </div>
-<div style="display:flex;gap:40px;align-items:center;background:#14213D;padding:32px 40px;border-radius:16px">
-<div style="width:420px;display:flex;flex-direction:column;gap:6px">
-<h3 style="font-size:32px;font-weight:600;color:#F6F4EE">The Balancing Mechanism</h3>
-<p style="font-size:24px;color:#F2994A;font-weight:600">Sits across both</p>
+<div style="display:flex;flex-direction:column;gap:20px;background:#14213D;padding:32px 40px;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#F6F4EE">Used for both: NESO picks for quantity, or for location</h3>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-left:6px solid #F2994A;padding-left:20px">
+<p style="font-size:26px;font-weight:600;color:#F6F4EE">Balancing Mechanism</p>
+<p style="font-size:24px;line-height:1.4;color:#C9D3E3">Bids and offers after Gate Closure, and where the cost growth shows</p>
 </div>
-<p style="flex:1;font-size:26px;line-height:1.4;color:#C9D3E3"><b style="color:#F6F4EE">Offer:</b> paid to increase output or reduce demand. <b style="color:#F6F4EE">Bid:</b> paid to reduce output or increase demand. Constraints mean bidding wind down and offering gas up, so system actions drive the rising bill.</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-left:6px solid #7FA7D1;padding-left:20px">
+<p style="font-size:26px;font-weight:600;color:#F6F4EE">Trades</p>
+<p style="font-size:24px;line-height:1.4;color:#C9D3E3">Wholesale trades before Gate Closure, and interconnector trades</p>
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Source: NESO heat review (Sept 2026), section 5.7 and Appendix C (NESO order of actions); NESO balancing services and Local Constraint Market pages</p>
-<aside>NESO’s actions fall into two kinds, and NESO labels them this way itself. Energy balancing is about quantity: making total supply equal total demand every second, so frequency stays near 50 hertz. Most of that is done by the market before Gate Closure, through wholesale trading. After that NESO tops it up with BM bids and offers, holds reserve such as Quick, Slow and Balancing Reserve, buys frequency response to catch sudden swings, and uses the Demand Flexibility Service. System balancing is about where the power is: keeping flows on each line within its limit, and keeping voltage and stability right in each area. That is inherently locational, so NESO picks BM actions by where the unit sits, and uses constraint trades, intertrips, the Local Constraint Market, DFS constraint actions and interconnector trades. The Balancing Mechanism sits across both. An offer pays a unit to increase output or reduce demand; a bid pays it to reduce output or increase demand. Wind farms bid negative prices, so NESO pays them to turn down because they lose output and subsidy, while a gas plant turning down pays NESO back. When a constraint binds, NESO bids wind down behind it and offers gas up in front of it, and that system balancing is where the cost growth is. When none of this is enough, NESO escalates to margin notices and emergency instructions, which is what we saw in the June heatwave. Keep this split in mind: flexibility has already proven itself on the energy side, and the newer, bigger prize is on the system side.</aside>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-left:6px solid #C9D3E3;padding-left:20px">
+<p style="font-size:26px;font-weight:600;color:#F6F4EE">Demand Flexibility Service</p>
+<p style="font-size:24px;line-height:1.4;color:#C9D3E3">National turn-down for margin, and zonal turn-up or down for constraints</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Source: NESO heat review (Sept 2026), section 5.7 and Appendix C (order of actions); NESO balancing services and trading pages</p>
+<aside>NESO’s actions fall into two kinds, and NESO labels them this way itself. Energy balancing is about quantity: making total supply equal total demand every second, so frequency stays near 50 hertz. System balancing is about where the power is: keeping flows on each line within its limit, and keeping voltage and stability right in each area. Each has a few markets of its own. For energy, NESO buys reserve ahead of time, Quick, Slow and Balancing Reserve, and frequency response services that react within a second or so to sudden swings. For system, it has the Local Constraint Market, which pays flexible sites behind the Scotland to England boundary to turn up or down, intertrips that disconnect generation automatically after a fault, and longer-term stability and voltage contracts. But the biggest tools are shared, and the same action can be taken for either reason. The Balancing Mechanism is the main one: an offer pays a unit to increase output or reduce demand, a bid pays it to reduce output or increase demand. NESO also trades: in the wholesale market before Gate Closure, and across interconnectors, mostly with the neighbouring system operators. The next slide covers interconnectors. And the Demand Flexibility Service now runs nationally for margin and zonally for constraints. When a constraint binds, NESO bids wind down behind it and offers gas up in front of it, and that system balancing is where the cost growth is. Keep this split in mind: flexibility has proven itself on the energy side, and the newer, bigger prize is on the system side.</aside>
 </section>
