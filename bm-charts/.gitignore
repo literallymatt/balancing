@@ -1,4 +1,4 @@
 .venv/
-data/
-fonts/
+/data/
+/fonts/
 __pycache__/
