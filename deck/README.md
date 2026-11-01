@@ -18,7 +18,7 @@ uploaded to the artifact as images (the `/_blob/...` paths):
 | `june23` | `05_focus_day_2026-06-23.png` |
 
 If the charts are regenerated, re-upload the PNGs and update those `src` paths.
-Figures on the slides quoted from the BM data (for example £3.15bn paid out
+Annual cost figures (annual costs, wind bids and one-national-price slides) are calendar-year totals from NESO's Daily BSUoS Cost Data, produced by `uv run neso-costs` in bm-charts (`output/data/06_neso_annual_balancing_costs_calendar_year.csv`). Figures on the slides quoted from the BM data (for example £3.15bn paid out
 Jan–Oct 2026) come from `bm-charts/output/data/` as of the 1 Nov 2026 run.
 
 ## Structure
