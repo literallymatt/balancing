@@ -13,6 +13,7 @@ dependencies = [
 
 [project.scripts]
 bm-charts = "bm_charts.cli:main"
+neso-costs = "bm_charts.neso_costs:main"
 
 [dependency-groups]
 dev = ["pytest>=8"]
