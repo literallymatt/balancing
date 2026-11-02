@@ -1,10 +1,10 @@
-<section id="bmexplainer" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<section id="bmexplainer" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:28px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B34D12;font-weight:600">02 · NESO’s role</p>
 <h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1.1;color:#14213D">How the Balancing Mechanism works</h2>
 </div>
 <div style="display:flex;gap:40px">
-<div style="flex:1;display:flex;flex-direction:column;gap:22px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
 <div style="display:flex;gap:24px;align-items:flex-start">
 <p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:600;color:#B34D12;width:40px">1</p>
 <div style="flex:1;display:flex;flex-direction:column;gap:4px">
@@ -38,10 +38,31 @@
 </div>
 </div>
 </div>
-<div style="display:flex;gap:28px;align-items:center;background:#14213D;padding:24px 40px;border-radius:16px">
-<p style="font-size:26px;font-weight:600;color:#F2994A;white-space:nowrap">Skip rates</p>
-<p style="flex:1;font-size:24px;line-height:1.4;color:#C9D3E3">When NESO passes over a cheaper bid or offer for a dearer one. It now publishes them, and they’re a sore point for batteries</p>
+<div style="display:flex;flex-direction:column;gap:16px;background:#14213D;padding:24px 40px 28px;border-radius:16px">
+<p style="font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#C9D3E3;font-weight:600">The BM window for one half-hour period</p>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #4A5568;padding-top:16px">
+<p style="font-size:22px;font-weight:600;color:#F2994A">Day ahead</p>
+<p style="font-size:24px;font-weight:600;color:#FFFFFF">Plans and prices in</p>
+<p style="font-size:22px;line-height:1.35;color:#C9D3E3">Initial plans by 11:00; bids and offers can change until Gate Closure</p>
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Source: Elexon BSC and BM guidance; NESO skip rate publications; NESO heat review (Sept 2026), section 5.7</p>
-<aside>Because the BM is where most of the money goes, it’s worth a minute on how it works. At Gate Closure every unit in the mechanism declares what it can do. That’s its plan, the FPN; its limits, the Maximum Export Limit and Maximum Import Limit, MEL and MIL, which say the most it can generate or consume; its dynamics, how quickly it can ramp and how much notice it needs; and its prices: an offer price per megawatt-hour to move up from its plan, and a bid price to move down. An offer is more power on the system, a generator turning up or a demand site turning down, anywhere between its FPN and its MEL. A bid is less power, a generator turning down or demand turning up, down as far as its MIL. Most bids are cheap or even pay NESO back, because a gas plant that turns down saves fuel. Wind is the exception: it bids negative because it loses output and subsidy, so NESO pays it to stop. In real time NESO’s control room starts from the cheapest actions, but they have to work: the unit must be in the right place for any constraint, fast enough, and able to deliver for as long as needed, so a cheaper unit in the wrong place or too slow loses to a dearer one. When that happens it’s called a skip. NESO now publishes skip rates, and they’ve been a sore point for battery owners, who argue they’re passed over too often. Each accepted action is paid at the unit’s own price, pay-as-bid, and Elexon settles it. NESO recovers all of it through BSUoS charges, which since 2023 fall entirely on demand, so our customers pay it.</aside>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #F2994A;padding-top:16px">
+<p style="font-size:22px;font-weight:600;color:#F2994A">T − 60 min</p>
+<p style="font-size:24px;font-weight:600;color:#FFFFFF">Gate Closure: window opens</p>
+<p style="font-size:22px;line-height:1.35;color:#C9D3E3">FPNs and prices lock; the market stops trading this period</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #F2994A;padding-top:16px">
+<p style="font-size:22px;font-weight:600;color:#F2994A">T to T + 30</p>
+<p style="font-size:24px;font-weight:600;color:#FFFFFF">Window closes at period end</p>
+<p style="font-size:22px;line-height:1.35;color:#C9D3E3">NESO accepts bids and offers, often just minutes ahead</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #4A5568;padding-top:16px">
+<p style="font-size:22px;font-weight:600;color:#F2994A">Days later</p>
+<p style="font-size:24px;font-weight:600;color:#FFFFFF">Elexon settles</p>
+<p style="font-size:22px;line-height:1.35;color:#C9D3E3">Pays accepted bids and offers, cashes out imbalances, and the cost goes to BSUoS</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Source: Elexon BSC and BM guidance; Grid Code BC1 and BC2; NESO heat review (Sept 2026), section 5.7</p>
+<aside>Because the BM is where most of the money goes, it’s worth a minute on how it works. At Gate Closure every unit in the mechanism declares what it can do. That’s its plan, the FPN; its limits, the Maximum Export Limit and Maximum Import Limit, MEL and MIL, which say the most it can generate or consume; its dynamics, how quickly it can ramp and how much notice it needs; and its prices: an offer price per megawatt-hour to move up from its plan, and a bid price to move down. An offer is more power on the system, a generator turning up or a demand site turning down, anywhere between its FPN and its MEL. A bid is less power, a generator turning down or demand turning up, down as far as its MIL. Most bids are cheap or even pay NESO back, because a gas plant that turns down saves fuel. Wind is the exception: it bids negative because it loses output and subsidy, so NESO pays it to stop. In real time NESO’s control room starts from the cheapest actions, but they have to work: the unit must be in the right place for any constraint, fast enough, and able to deliver for as long as needed, so a cheaper unit in the wrong place or too slow loses to a dearer one. Each accepted action is paid at the unit’s own price, pay-as-bid, and Elexon settles it. NESO recovers all of it through BSUoS charges, which since 2023 fall entirely on demand, so our customers pay it. Here’s the timing for any one half-hour settlement period, which I’ll call T. From the day before, units send in initial plans, by 11 a.m., and their bid and offer prices, which they can keep changing. One hour before the period starts is Gate Closure. The final plans and prices are locked and the wholesale market stops trading that half-hour, so the BM window for that period opens: from here NESO is the only buyer and seller. It can accept bids and offers for the period from Gate Closure right up to the end of the half-hour, often just minutes ahead, and units can still redeclare their limits if a fault changes what they can do. When the half-hour ends, the window closes. Elexon then settles it over the following days and weeks: it pays the accepted bids and offers, cashes out anyone who was out of balance at the imbalance price, and NESO passes the balancing cost on through BSUoS. That one-hour gap is the point from the earlier slide: up to Gate Closure the market trades as if the wires were unlimited, and after it NESO has to fix whatever doesn’t fit.</aside>
 </section>
