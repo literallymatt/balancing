@@ -1,43 +1,51 @@
-<section id="role" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<section id="role" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B34D12;font-weight:600">02 · NESO’s role</p>
 <h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1.1;color:#14213D">The market trades; NESO makes it physically work</h2>
 </div>
-<div style="display:flex;gap:16px;align-items:stretch">
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:28px;border:1px solid #E2DDD0;border-radius:12px">
+<div style="display:grid;grid-template-columns:160px 1fr 1fr 1fr 1fr;gap:16px;align-items:stretch">
+<p style="font-size:24px;color:#6B7280"> </p>
 <p style="font-size:24px;font-weight:600;color:#B34D12">Years to day-ahead</p>
-<h3 style="font-size:30px;font-weight:600;color:#14213D">The market trades</h3>
-<p style="font-size:24px;line-height:1.4;color:#4A5568">Suppliers and generators buy and sell to match their own demand and output</p>
-</div>
-<x-shape kind="arrow-right" style="background:#E2DDD0;width:48px;height:32px;align-self:center"></x-shape>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:28px;border:1px solid #E2DDD0;border-radius:12px">
-<p style="font-size:24px;font-weight:600;color:#B34D12">1 hour before</p>
-<h3 style="font-size:30px;font-weight:600;color:#14213D">Gate Closure</h3>
-<p style="font-size:24px;line-height:1.4;color:#4A5568">Each unit locks in its Final Physical Notification (FPN): what it plans to do</p>
-</div>
-<x-shape kind="arrow-right" style="background:#E2DDD0;width:48px;height:32px;align-self:center"></x-shape>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#14213D;padding:28px;border:1px solid #14213D;border-radius:12px">
-<p style="font-size:24px;font-weight:600;color:#F2994A">Real time</p>
-<h3 style="font-size:30px;font-weight:600;color:#F6F4EE">NESO balances</h3>
-<p style="font-size:24px;line-height:1.4;color:#C9D3E3">Bids, offers and services close the gap between plans and physics</p>
-</div>
-<x-shape kind="arrow-right" style="background:#E2DDD0;width:48px;height:32px;align-self:center"></x-shape>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:28px;border:1px solid #E2DDD0;border-radius:12px">
+<p style="font-size:24px;font-weight:600;color:#B34D12">Up to Gate Closure</p>
+<p style="font-size:24px;font-weight:600;color:#B34D12">Real time</p>
 <p style="font-size:24px;font-weight:600;color:#B34D12">After the event</p>
-<h3 style="font-size:30px;font-weight:600;color:#14213D">Settlement</h3>
-<p style="font-size:24px;line-height:1.4;color:#4A5568">Elexon charges imbalance to anyone off their position, per 30-minute period</p>
+<p style="font-size:26px;font-weight:600;color:#14213D;align-self:center">Market</p>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFDF8;padding:24px;border:1px solid #E2DDD0;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#4A5568">Suppliers and generators trade to match their own demand and output</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFDF8;padding:24px;border:1px solid #E2DDD0;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#4A5568">Trading continues; an hour ahead each unit locks in its plan, its FPN</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFDF8;padding:24px;border:1px solid #E2DDD0;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#4A5568">Units run to their FPN unless NESO instructs them otherwise</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFDF8;padding:24px;border:1px solid #E2DDD0;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#4A5568">Elexon charges imbalance to anyone off their position, per half hour</p>
+</div>
+<p style="font-size:26px;font-weight:600;color:#14213D;align-self:center">NESO</p>
+<div style="display:flex;flex-direction:column;gap:8px;background:#E8EEF5;padding:24px;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#1B2638">Forecasts, and buys reserve, response and constraint contracts ahead</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#E8EEF5;padding:24px;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#1B2638">Trades wholesale and across interconnectors; calls DFS</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#14213D;padding:24px;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#F6F4EE"><b style="color:#F2994A">Balancing Mechanism:</b> accepts bids and offers, its main tool</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#E8EEF5;padding:24px;border-radius:12px">
+<p style="font-size:24px;line-height:1.4;color:#1B2638">Recovers its costs from suppliers through BSUoS charges</p>
 </div>
 </div>
 <div style="display:flex;gap:32px">
-<div style="flex:1;display:flex;gap:28px;align-items:center;background:#E8EEF5;padding:28px 36px;border-radius:12px">
+<div style="flex:1;display:flex;gap:28px;align-items:center;background:#E8EEF5;padding:24px 36px;border-radius:12px">
 <p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:600;color:#14213D;white-space:nowrap">50 Hz</p>
-<p style="flex:1;font-size:26px;line-height:1.4;color:#1B2638">Supply must match demand every second, or frequency drifts (normal range 49.8–50.2 Hz)</p>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#1B2638">Supply must match demand every second, or frequency drifts</p>
 </div>
-<div style="flex:1;display:flex;gap:28px;align-items:center;background:#E8EEF5;padding:28px 36px;border-radius:12px">
+<div style="flex:1;display:flex;gap:28px;align-items:center;background:#E8EEF5;padding:24px 36px;border-radius:12px">
 <x-icon name="Lightning" style="color:#14213D;width:56px;height:56px"></x-icon>
 <p style="flex:1;font-size:26px;line-height:1.4;color:#1B2638">Power flows must stay within network limits, even after a fault</p>
 </div>
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Source: NESO, Review of Electricity System Operation during Extreme Heat (Sept 2026), section 5</p>
-<aside>Why does NESO need to balance at all? In GB’s market design, suppliers and generators trade with each other right up to an hour before delivery, each trying to match their own customers’ demand or their own output. At Gate Closure, an hour ahead, every large unit submits its Final Physical Notification: what it intends to generate or consume. From that point NESO takes over as what the design calls the ‘residual balancer’. Two physical rules force its hand. Supply and demand must match every second, or frequency moves away from 50 hertz; NESO aims to keep it between 49.8 and 50.2. And power flows must stay within what the network can carry, even if a line trips. The market doesn’t see either of those things. Afterwards, Elexon settles everyone in 30-minute periods, charging imbalance to anyone who didn’t match their contracted position. Keep that 30-minute period and the FPN in mind, because both come back when we talk about reform.</aside>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Source: NESO, Review of Electricity System Operation during Extreme Heat (Sept 2026), section 5; Elexon; NESO BSUoS</p>
+<aside>Why does NESO need to balance at all, and when does it act? In GB’s market design, suppliers and generators trade with each other right up to an hour before delivery, each trying to match their own customers’ demand or their own output. At Gate Closure, an hour ahead, every large unit locks in its Final Physical Notification: what it intends to generate or consume. Afterwards, Elexon settles everyone in half-hour periods, charging imbalance to anyone who didn’t match their contracted position. NESO isn’t idle until Gate Closure. Well ahead, it forecasts demand and wind, and buys reserve, frequency response and some constraint contracts. In the hours before, its trading desk can buy or sell in the wholesale market and across interconnectors, and it can call the Demand Flexibility Service. But its main tool only opens at Gate Closure: the Balancing Mechanism, where it accepts bids and offers to move units away from their plans. That’s where most of the money goes, and it all ends up on bills through BSUoS. Two physical rules force NESO’s hand. Supply and demand must match every second, or frequency moves away from 50 hertz. And power flows must stay within what the network can carry, even if a line trips. The market doesn’t see either of those things.</aside>
 </section>
