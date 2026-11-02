@@ -29,3 +29,25 @@ Jan–Oct 2026) come from `bm-charts/output/data/` as of the 1 Nov 2026 run.
    invisible distributed assets, 23 June heatwave
 4. The fixes: REMA and reformed national pricing, NESO's balancing reforms
 5. Flexibility: how I&C DSR addresses each difficulty, customer opportunity
+
+## PowerPoint version
+
+`balancing-the-grid.pptx` is an editable PowerPoint export of the same slides,
+built by `pptx/build.js`. It lays each slide out in headless Chromium and
+rebuilds every box, border and text block as a native PowerPoint shape or text
+box, so the text can be edited directly. The annual costs chart is a native
+PowerPoint chart built from `data/annual_balancing_costs.csv` (forecast bars are
+hatched with a dashed outline), and the tables are native PowerPoint tables.
+Speaker notes come from each slide's `<aside>`, slides hidden in the HTML deck
+are hidden in PowerPoint, and the PowerPoint sections follow `project/deck.json`.
+
+Fonts are swapped to Arial, because IBM Plex Sans and Space Grotesk aren't
+installed with Office. The HTML deck is unchanged and stays the source.
+
+To rebuild after editing the slides:
+
+```bash
+cd deck/pptx
+npm install       # needs Playwright with Chromium (npx playwright install chromium)
+node build.js     # writes deck/balancing-the-grid.pptx
+```
