@@ -21,8 +21,8 @@
     "cover",
     "agenda",
     "annualcosts",
-    "role",
     "toolkit",
+    "role",
     "bmexplainer",
     "toolkitdetail",
     "constraints",
@@ -50,7 +50,7 @@
     },
     "s3": {
       "description": "NESO’s role: why and how it balances the system",
-      "start": "role"
+      "start": "toolkit"
     },
     "s4": {
       "description": "The difficulties NESO faces and why they happen",
