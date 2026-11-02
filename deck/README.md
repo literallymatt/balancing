@@ -50,4 +50,5 @@ To rebuild after editing the slides:
 cd deck/pptx
 npm install       # needs Playwright with Chromium (npx playwright install chromium)
 node build.js     # writes deck/balancing-the-grid.pptx
+node build.js ../../deck-alt ../../deck-alt/balancing-the-grid-corporate.pptx   # the restyled copy
 ```

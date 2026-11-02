@@ -16,3 +16,16 @@ Same file layout as `deck/`: `project/deck.json` is the index and
 `project/slides/<id>.html` holds one slide each, with speaker notes in `<aside>`.
 It is published as its own Slides artifact, separate from the original:
 https://claude.ai/artifact/3hwpN79THXMAGQsEicz87S
+
+## PowerPoint version
+
+`balancing-the-grid-corporate.pptx` is an editable PowerPoint export of these
+slides, built with the same script as the original deck's export:
+
+```bash
+cd deck/pptx
+npm install
+node build.js ../../deck-alt ../../deck-alt/balancing-the-grid-corporate.pptx
+```
+
+See [`../deck/README.md`](../deck/README.md#powerpoint-version) for what the export keeps.

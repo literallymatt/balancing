@@ -7,8 +7,9 @@
 // Speaker notes come from each slide's <aside>; slides marked `hidden` in the
 // HTML are hidden in PowerPoint; sections follow project/deck.json.
 //
-// Usage (from deck/pptx):  npm install && node build.js
-// Output: deck/balancing-the-grid.pptx
+// Usage (from deck/pptx):  npm install && node build.js [deck folder] [output .pptx]
+// Defaults: ../ (this deck) -> deck/balancing-the-grid.pptx.
+// The restyled copy: node build.js ../../deck-alt ../../deck-alt/balancing-the-grid-corporate.pptx
 
 const fs = require("fs");
 const path = require("path");
@@ -23,9 +24,10 @@ let chromium;
 try { ({ chromium } = require("playwright")); }
 catch { ({ chromium } = require(path.join(require("child_process").execSync("npm root -g").toString().trim(), "playwright"))); }
 
-const DECK = path.resolve(__dirname, "..");
+const DECK = path.resolve(process.argv[2] || path.join(__dirname, ".."));
 const PROJECT = path.join(DECK, "project");
-const OUT = path.join(DECK, "balancing-the-grid.pptx");
+const OUT = path.resolve(process.argv[3] || path.join(DECK, "balancing-the-grid.pptx"));
+const COSTS_CSV = path.join(__dirname, "../data/annual_balancing_costs.csv");
 const FONT = "Arial"; // IBM Plex Sans and Space Grotesk are not on most Office installs
 const PX = 1 / 144; // 1920px canvas -> 13.333in slide
 const PT = 0.5; // px -> pt
@@ -65,6 +67,21 @@ function extract() {
   if (sec.id === "annualcosts") {
     chartEl = sec.querySelector('[style*="border-bottom:2px solid"]').parentElement;
     out.chart = box(chartEl.getBoundingClientRect());
+    // Take the chart's colours from the HTML so each deck style keeps its own palette
+    const bars = chartEl.querySelector('[style*="border-bottom:2px solid"]');
+    const first = bars.children[0].lastElementChild.children;
+    const dashed = bars.querySelector('[style*="dashed"]');
+    const dcs = getComputedStyle(dashed);
+    out.chart.colors = {
+      con: rgb(getComputedStyle(first[first.length - 1]).backgroundColor).hex,
+      oth: rgb(getComputedStyle(first[0]).backgroundColor).hex,
+      fcLine: rgb(dcs.borderTopColor).hex,
+      fcFill: (rgb(dcs.backgroundColor) || { hex: "FFFFFF" }).hex,
+      patterned: dcs.backgroundImage !== "none",
+      label: rgb(getComputedStyle(bars.querySelector("p")).color).hex,
+      axis: rgb(getComputedStyle(bars).borderBottomColor).hex,
+      text: rgb(getComputedStyle(chartEl.querySelector("p")).color).hex,
+    };
   }
 
   const TEXT_TAGS = new Set(["P", "H1", "H2", "H3", "LI", "TD", "TH"]);
@@ -299,7 +316,7 @@ function addNativeTable(slide, t, n) {
 }
 
 function readCosts() {
-  const rows = fs.readFileSync(path.join(DECK, "data/annual_balancing_costs.csv"), "utf8").trim().split("\n").slice(1)
+  const rows = fs.readFileSync(COSTS_CSV, "utf8").trim().split("\n").slice(1)
     .map((l) => l.match(/("[^"]*"|[^,]*)(,|$)/g).map((c) => c.replace(/,$/, "").replace(/^"|"$/g, "")));
   const byYear = {};
   for (const [year, status, con, oth, tot] of rows) {
@@ -310,7 +327,9 @@ function readCosts() {
   return byYear;
 }
 
+let chartColors = null;
 function addCostsChart(slide, pres, rect) {
+  const C = (chartColors = rect.colors);
   const d = readCosts();
   const years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "’28–29", "2030"];
   const g = (y, k) => (d[y] && d[y][k] != null ? +d[y][k].toFixed(3) : 0);
@@ -320,28 +339,28 @@ function addCostsChart(slide, pres, rect) {
   const tot = years.map((_, i) => +(con[i] + oth[i] + fc[i]).toFixed(3));
 
   slide.addText("GB balancing costs by calendar year, £bn", {
-    x: inch(rect.x), y: inch(rect.y), w: inch(rect.w * 0.5), h: 0.3, fontFace: FONT, fontSize: 12, color: "4A5568",
+    x: inch(rect.x), y: inch(rect.y), w: inch(rect.w * 0.5), h: 0.3, fontFace: FONT, fontSize: 12, color: C.text,
     margin: 0, valign: "top", isTextBox: true, objectName: "chart caption",
   });
-  const axis = { catAxisLabelColor: "4A5568", catAxisLabelFontSize: 11, catAxisLabelFontFace: FONT };
+  const axis = { catAxisLabelColor: C.text, catAxisLabelFontSize: 11, catAxisLabelFontFace: FONT };
   slide.addChart(
     [
       { type: pres.ChartType.bar, data: [
         { name: "Constraints", labels: years, values: con },
         { name: "Everything else", labels: years, values: oth },
         { name: "NESO forecast", labels: years, values: fc },
-      ], options: { barGrouping: "stacked", chartColors: ["2F5D8A", "C9D2DE", "F2994A"], barGapWidthPct: 55 } },
+      ], options: { barGrouping: "stacked", chartColors: [C.con, C.oth, C.fcLine], barGapWidthPct: 55 } },
       { type: pres.ChartType.line, data: [{ name: "Total", labels: years, values: tot }], options: {
-        chartColors: ["14213D"], lineSize: 0, lineDataSymbol: "none",
+        chartColors: [C.label], lineSize: 0, lineDataSymbol: "none",
         showValue: true, dataLabelPosition: "t", dataLabelFormatCode: '[>7.5]"~"0;[=0]"";0.0',
-        dataLabelColor: "14213D", dataLabelFontSize: 14, dataLabelFontBold: true, dataLabelFontFace: FONT,
+        dataLabelColor: C.label, dataLabelFontSize: 14, dataLabelFontBold: true, dataLabelFontFace: FONT,
       } },
     ],
     {
       x: inch(rect.x), y: inch(rect.y) + 0.3, w: inch(rect.w), h: inch(rect.h) - 0.3,
-      showLegend: true, legendPos: "t", layout: { x: 0, y: 0.1, w: 1, h: 0.9 }, legendFontSize: 12, legendColor: "4A5568", legendFontFace: FONT,
+      showLegend: true, legendPos: "t", layout: { x: 0, y: 0.1, w: 1, h: 0.9 }, legendFontSize: 12, legendColor: C.text, legendFontFace: FONT,
       valAxisHidden: true, valGridLine: { style: "none" }, valAxisMinVal: 0, valAxisMaxVal: 8.6,
-      catAxisLineShow: true, catAxisLineColor: "1B2638", catGridLine: { style: "none" }, ...axis,
+      catAxisLineShow: true, catAxisLineColor: C.axis, catGridLine: { style: "none" }, ...axis,
       objectName: "Annual balancing costs chart",
       altText: "Stacked columns of GB balancing costs by calendar year, 2018 to 2026 actuals split into constraints and everything else, with NESO forecasts for Nov-Dec 2026, 2027 and 2030.",
     }
@@ -355,8 +374,10 @@ async function patchCharts(file) {
     let xml = await zip.file(name).async("string");
     if (!xml.includes("NESO forecast")) continue;
     xml = xml.replace(/(<c:ser>(?:(?!<\/c:ser>).)*?NESO forecast(?:(?!<\/c:ser>).)*?<c:spPr>)(.*?)(<\/c:spPr>)/s, (m, a, _sp, c) =>
-      a + '<a:pattFill prst="wdUpDiag"><a:fgClr><a:srgbClr val="F2994A"/></a:fgClr><a:bgClr><a:srgbClr val="FFFDF8"/></a:bgClr></a:pattFill>' +
-      '<a:ln w="19050"><a:solidFill><a:srgbClr val="F2994A"/></a:solidFill><a:prstDash val="dash"/></a:ln>' + c);
+      a + (chartColors.patterned
+        ? `<a:pattFill prst="wdUpDiag"><a:fgClr><a:srgbClr val="${chartColors.fcLine}"/></a:fgClr><a:bgClr><a:srgbClr val="FFFDF8"/></a:bgClr></a:pattFill>`
+        : `<a:solidFill><a:srgbClr val="${chartColors.fcFill}"/></a:solidFill>`) +
+      `<a:ln w="19050"><a:solidFill><a:srgbClr val="${chartColors.fcLine}"/></a:solidFill><a:prstDash val="dash"/></a:ln>` + c);
     xml = xml.replace(/(<c:lineChart>.*?<c:ser>.*?<c:spPr>)(.*?)(<\/c:spPr>)/s, (m, a, _sp, c) => a + '<a:ln><a:noFill/></a:ln>' + c);
     xml = xml.replace(/<c:legend>\s*<c:legendPos val="t"\/>/, '<c:legend><c:legendPos val="t"/><c:legendEntry><c:idx val="3"/><c:delete val="1"/></c:legendEntry>');
     zip.file(name, xml);
