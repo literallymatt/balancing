@@ -1,0 +1,66 @@
+{
+  "v": 4,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-11-02T17:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "faces": {},
+  "lists": "css",
+  "order": [
+    "cover",
+    "agenda",
+    "annualcosts",
+    "toolkit",
+    "role",
+    "bmexplainer",
+    "toolkitdetail",
+    "constraints",
+    "visibility",
+    "rema",
+    "reforms",
+    "rnptimeline",
+    "statement",
+    "dsrsummary",
+    "dsrmap",
+    "rnpsite",
+    "sitecase",
+    "sitejourney",
+    "opportunity",
+    "forus",
+    "takeaways",
+    "sources"
+  ],
+  "sections": {
+    "s1": {
+      "description": "Introduction and the shape of the talk",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "The exploding cost of balancing the grid",
+      "start": "annualcosts"
+    },
+    "s3": {
+      "description": "NESO’s role: why and how it balances the system",
+      "start": "toolkit"
+    },
+    "s4": {
+      "description": "The difficulties NESO faces and why they happen",
+      "start": "constraints"
+    },
+    "s5": {
+      "description": "What NESO and government are doing about it",
+      "start": "rema"
+    },
+    "s6": {
+      "description": "How I&C demand side response helps, and the opportunity for customers",
+      "start": "statement"
+    },
+    "s7": {
+      "description": "Takeaways and sources",
+      "start": "takeaways"
+    }
+  },
+  "title": "Balancing the Grid: Rising Costs and the Role of Flexibility (corporate style)"
+}
