@@ -7,6 +7,8 @@ notes are versioned here alongside the analysis.
 
 - `project/deck.json`: title, slide order and sections.
 - `project/slides/<id>.html`: one slide each, with speaker notes in `<aside>`.
+- `presenter-script.md`, `qa-prep.md` and `rnp-reforms-qa-brief.md`: speaker notes and Q&A prep.
+- `fact-check-2026-11-02.md`: what the 2 Nov 2026 source check changed and what it couldn't verify.
 
 Three slides embed charts from [`bm-charts/output/charts/`](../bm-charts/output/charts/),
 uploaded to the artifact as images (the `/_blob/...` paths):
