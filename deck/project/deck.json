@@ -1,1 +1,71 @@
-{"v":4,"createdOnFiles":{"v":1,"at":"2026-10-25T19:25:00Z"},"lists":"css","title":"The Exploding Cost of Balancing the Grid","order":["cover","agenda","annualcosts","bmmonthly","role","toolkit","bmexplainer","interconnectors","toolkitdetail","constraints","windbids","locational","visibility","june23","rema","reforms","statement","dsrmap","opportunity","forus","takeaways","sources"],"sections":{"s1":{"description":"Introduction and the shape of the talk","start":"cover"},"s2":{"description":"The exploding cost of balancing the grid","start":"annualcosts"},"s3":{"description":"NESO’s role: why and how it balances the system","start":"role"},"s4":{"description":"The difficulties NESO faces and why they happen","start":"constraints"},"s5":{"description":"What NESO and government are doing about it","start":"rema"},"s6":{"description":"How I&C demand side response helps, and the opportunity for customers","start":"statement"},"s7":{"description":"Takeaways and sources","start":"takeaways"}},"faces":{"space-grotesk":{"family":"Space Grotesk","href":"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap"},"ibm-plex-sans":{"family":"IBM Plex Sans","href":"https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"}},"designSystems":[]}
+{
+  "v": 4,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-10-25T19:25:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "faces": {
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
+    },
+    "space-grotesk": {
+      "family": "Space Grotesk",
+      "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap"
+    }
+  },
+  "lists": "css",
+  "order": [
+    "cover",
+    "agenda",
+    "annualcosts",
+    "role",
+    "toolkit",
+    "bmexplainer",
+    "toolkitdetail",
+    "constraints",
+    "locational",
+    "visibility",
+    "rema",
+    "reforms",
+    "statement",
+    "dsrmap",
+    "opportunity",
+    "forus",
+    "takeaways",
+    "sources"
+  ],
+  "sections": {
+    "s1": {
+      "description": "Introduction and the shape of the talk",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "The exploding cost of balancing the grid",
+      "start": "annualcosts"
+    },
+    "s3": {
+      "description": "NESO’s role: why and how it balances the system",
+      "start": "role"
+    },
+    "s4": {
+      "description": "The difficulties NESO faces and why they happen",
+      "start": "constraints"
+    },
+    "s5": {
+      "description": "What NESO and government are doing about it",
+      "start": "rema"
+    },
+    "s6": {
+      "description": "How I&C demand side response helps, and the opportunity for customers",
+      "start": "statement"
+    },
+    "s7": {
+      "description": "Takeaways and sources",
+      "start": "takeaways"
+    }
+  },
+  "title": "The Exploding Cost of Balancing the Grid"
+}

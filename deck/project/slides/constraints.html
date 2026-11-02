@@ -1,33 +1,52 @@
-<section id="constraints" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<section id="constraints" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B34D12;font-weight:600">03 · The difficulties</p>
-<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1.1;color:#14213D">A constraint means paying twice for the same megawatt-hour</h2>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1.1;color:#14213D">The market trades as if the wires were unlimited</h2>
 </div>
-<div style="display:flex;gap:32px;align-items:center">
-<div style="width:500px;display:flex;flex-direction:column;gap:12px;background:#2F5D8A;padding:36px;border-radius:16px">
-<h3 style="font-size:36px;font-weight:600;color:#F6F4EE">Scotland and the north</h3>
-<p style="font-size:28px;line-height:1.4;color:#E3ECF5">Lots of wind, relatively little demand</p>
+<div style="display:flex;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;padding:32px;border:1px solid #E2DDD0;border-radius:16px">
+<p style="font-size:24px;font-weight:600;color:#B34D12">Up to Gate Closure: the market’s view</p>
+<div style="display:flex;gap:12px;align-items:center">
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;background:#2F5D8A;padding:20px;border-radius:12px">
+<p style="font-size:24px;font-weight:600;color:#F6F4EE">Scottish wind</p>
+<p style="font-size:24px;line-height:1.3;color:#E3ECF5">sells 1,000 MW</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px">
-<p style="font-size:28px;font-weight:600;color:#14213D;text-align:center">Transmission boundary at its limit</p>
-<x-shape kind="arrow-right" style="background:#F2994A;width:320px;height:120px"></x-shape>
-<p style="font-size:24px;color:#4A5568;text-align:center">Power can’t all get through</p>
-</div>
-<div style="width:500px;display:flex;flex-direction:column;gap:12px;background:#14213D;padding:36px;border-radius:16px">
-<h3 style="font-size:36px;font-weight:600;color:#F6F4EE">England and the south</h3>
-<p style="font-size:28px;line-height:1.4;color:#C9D3E3">Where most of the demand sits</p>
-</div>
-</div>
-<div style="display:flex;gap:32px">
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:36px;border:1px solid #E2DDD0;border-radius:16px">
-<h3 style="font-size:32px;font-weight:600;color:#14213D">1. Bid: turn down behind the constraint</h3>
-<p style="font-size:28px;line-height:1.4;color:#4A5568">NESO pays wind farms in the north to reduce output they could otherwise have sold</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:36px;border:1px solid #E2DDD0;border-radius:16px">
-<h3 style="font-size:32px;font-weight:600;color:#14213D">2. Offer: turn up in front of it</h3>
-<p style="font-size:28px;line-height:1.4;color:#4A5568">It then pays plant in the south, usually gas, to replace that energy near demand</p>
+<x-shape kind="arrow-right" style="background:#9AA8BC;width:90px;height:48px"></x-shape>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;background:#14213D;padding:20px;border-radius:12px">
+<p style="font-size:24px;font-weight:600;color:#F6F4EE">Southern supplier</p>
+<p style="font-size:24px;line-height:1.3;color:#C9D3E3">buys 1,000 MW</p>
 </div>
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Source: NESO, Review of Electricity System Operation during Extreme Heat (preliminary report, Sept 2026), section 5.4 and 5.7</p>
-<aside>Before the numbers, a quick reminder of what a constraint is. NESO’s own analogy is a motorway network: some stretches get congested. The classic example is the boundary between Scotland and England, which doesn’t have enough capacity to carry all the wind generated in Scotland south to where the demand is. When that happens, the market has already decided who generates, but physics says the power can’t all get there. So NESO uses the Balancing Mechanism twice: it accepts bids to turn wind down behind the constraint, compensating the wind farm for lost output and subsidy, and then accepts offers to turn generation up on the other side, usually gas in the south. We effectively pay twice for one megawatt-hour. It’s not only Scotland: during the heatwave NESO was managing import constraints into the South East of England. And note that flexible demand can play on both sides of this: turning up behind a constraint, or turning down in front of it.</aside>
+<p style="font-size:26px;line-height:1.4;color:#1B2638">One national price and no check on the network, so the trade goes through and becomes both FPNs</p>
+</div>
+<div style="width:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
+<x-shape kind="line" style="background:#B34D12;width:4px;height:120px"></x-shape>
+<p style="font-size:24px;font-weight:600;color:#B34D12;text-align:center">Gate Closure</p>
+<x-shape kind="line" style="background:#B34D12;width:4px;height:120px"></x-shape>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;padding:32px;border:1px solid #E2DDD0;border-radius:16px">
+<p style="font-size:24px;font-weight:600;color:#2F5D8A">Real time: what the wires can carry</p>
+<div style="display:flex;gap:12px;align-items:center">
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;background:#2F5D8A;padding:20px;border-radius:12px">
+<p style="font-size:24px;font-weight:600;color:#F6F4EE">Bid: wind down</p>
+<p style="font-size:24px;line-height:1.3;color:#E3ECF5">400 MW, NESO pays</p>
+</div>
+<div style="width:100px;display:flex;flex-direction:column;align-items:center;gap:4px">
+<x-shape kind="arrow-right" style="background:#F2994A;width:90px;height:28px"></x-shape>
+<p style="font-size:24px;font-weight:600;color:#B34D12;white-space:nowrap">600 MW</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;background:#14213D;padding:20px;border-radius:12px">
+<p style="font-size:24px;font-weight:600;color:#F6F4EE">Offer: gas up</p>
+<p style="font-size:24px;line-height:1.3;color:#C9D3E3">400 MW, NESO pays</p>
+</div>
+</div>
+<p style="font-size:26px;line-height:1.4;color:#1B2638">The boundary takes only 600 MW, so NESO pays both sides to undo the rest in the BM</p>
+</div>
+</div>
+<div style="display:flex;gap:28px;align-items:center;background:#14213D;padding:28px 40px;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:44px;font-weight:600;color:#F2994A;white-space:nowrap">Paid twice</p>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F6F4EE">Nothing in the wholesale market stops a trade the network can’t deliver. NESO inherits it at Gate Closure, and the cost lands on bills through BSUoS.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">Illustrative volumes. Source: NESO heat review (preliminary report, Sept 2026), sections 5.4 and 5.7; NESO RNP Call for Input (Feb 2026)</p>
+<aside>This is the root of the constraint problem, and it links the two halves of the timeline we saw earlier. Up to Gate Closure, the wholesale market trades on a single national price, as if the network between buyer and seller had no limits. Nothing checks whether a trade can physically be delivered. So a Scottish wind farm can sell, say, 1,000 megawatts to a supplier in the south, and both sides submit FPNs that match. At Gate Closure NESO inherits those plans. But in real time the boundary between Scotland and England can only carry, in this example, 600 megawatts. NESO’s own analogy is a motorway network where some stretches get congested, and the Scotland to England boundary is the classic one. So NESO uses the Balancing Mechanism twice. It accepts bids to turn the wind farm down by 400 megawatts behind the constraint, paying it for lost output and subsidy. Then it accepts offers to turn generation up by the same amount in front of it, usually gas in the south, near demand. We effectively pay twice for one megawatt-hour, and every pound of that flows through BSUoS to suppliers and on to our customers. It isn’t only Scotland: during the June heatwave NESO was managing import constraints into the South East of England. And flexible demand can play on both sides of this: turning up behind a constraint to use the surplus wind, or turning down in front of it instead of gas turning up.</aside>
 </section>
