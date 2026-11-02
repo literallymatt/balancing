@@ -32,7 +32,7 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 - The BM analysis is our own, from Elexon's public data. Everything else is sourced on the slides.
 
 **Detail**
-- Open with the hook: every pound NESO spends balancing the grid ends up on our customers' bills through BSUoS, and that number has more than doubled since 2020.
+- Open with the hook: every pound NESO spends balancing the grid ends up on our customers' bills through BSUoS, and that number has gone from £1.3bn in 2020 to £2.9bn so far this year, heading for about £3.7bn.
 - Set the frame you'll return to at the end: NESO's problem is increasingly about *where* power is, not just *how much*, and flexible demand in the right place is one of the cheapest fixes.
 - Keep it short. Don't read the subtitle out.
 
@@ -40,12 +40,12 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 
 ## Slide 3 · Annual balancing costs (3:00)
 
-### 2026 costs are already more than double 2020's, and nearly all of it is constraints
+### 2026 costs hit £2.9bn by October, 2.2× 2020's £1.3bn, heading for about £3.7bn
 
 **Broad points**
 - £0.6bn in 2018, £1.3bn in 2020, £3.0bn at the 2022 gas-crisis peak.
 - The blue part is constraints: £0.5bn in 2018, £2.1bn in 2025, which is 90% of the year.
-- 2026 is at £2.9bn with two months to go, close to 2022, and this time it's almost all constraints.
+- 2026 is at £2.9bn with two months to go: 2.2 times 2020, close to 2022, and this time it's almost all constraints. On NESO's forecast the full year is about £3.7bn, nearly three times 2020.
 - The orange bars are NESO's forecasts, not our data: about £3.7bn for 2026, £4.2bn for 2027, and a possible peak near £8bn by 2030.
 
 **Detail**
