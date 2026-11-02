@@ -104,7 +104,7 @@ Likely questions for the talk, grouped by theme, with a short answer to lead wit
 
 ### If demand can already do it, why does demand only get 0.3% of turn-down money?
 **Say:** Mostly scale and location. Wind farms are large, already in the BM and sit exactly behind the constraint. Most flexible demand is small, below the threshold, and not set up to bid. That's the gap the Demand for Constraints market and lower thresholds are meant to close.
-**If pressed:** Wind gets about 94% of the turn-down money (our analysis of Elexon BMRS data). That's the size of the opportunity for demand to compete.
+**If pressed:** Wind gets about 94% of the turn-down money (Elexon BMRS indicative BM cashflows). That's the size of the opportunity for demand to compete.
 
 ### What are skip rates, and won't small sites just get skipped?
 **Say:** A skip is when NESO's control room passes over a cheaper bid or offer and takes a more expensive one. Sometimes that's for good reasons (wrong location, too slow, can't run long enough), and sometimes it's because control room tools couldn't handle lots of small units.
@@ -169,7 +169,7 @@ Full detail is in `notes/rnp-reforms-qa-brief.md`. The quick answers:
 
 ### How much could a site earn?
 **Say:** It depends on size, location, how fast it can respond, and how often it can move without hurting the process. I'd rather not give a number without looking at the site's data. Happy to run that analysis.
-**Anchor if needed:** the average accepted BM offer price roughly doubled over the past year, from about £121 to £245/MWh (our analysis).
+**Anchor if needed:** the average accepted BM offer price roughly doubled over the past year, from about £121 to £245/MWh (Elexon BMRS settlement data).
 
 ### Won't flexing disrupt production?
 **Say:** Only if it's set up badly. The best candidates are loads with some slack: thermal storage, pumping, refrigeration, batch processes, or on-site generation and batteries. Customers set the limits and can decline events in most schemes.
