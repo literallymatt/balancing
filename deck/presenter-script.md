@@ -105,7 +105,7 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 - Pay-as-bid; Elexon settles; costs go to BSUoS, which since 2023 falls entirely on demand.
 
 **Detail**
-- Steps 1 to 3 on the left, then the offer and bid boxes.
+- The slide shows only the offer and bid boxes and the timeline strip. Talk through what units declare, how NESO picks and pay-as-bid out loud; those points are no longer on the slide.
 - The key point on bids: a gas plant turning down usually pays NESO back because it saves fuel. Wind bids negative, because turning down loses it output and subsidy, so NESO pays it to stop. That's why constraint costs grow with wind.
 - Emphasise that the cheapest action isn't always taken. A cheap unit in the wrong place, or too slow, loses to a dearer one that works. Location matters.
 - Timeline strip, one box at a time:
