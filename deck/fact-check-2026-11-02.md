@@ -58,9 +58,11 @@ uses southern England with the Scottish boundaries full as its "in front of a co
 
 ## Checked and correct
 
-- Annual costs chart: every bar matches the NESO Daily BSUoS data and the NESO BSUoS forecast for
-  Nov-26 (published Oct 2026): 2026 = £2.88bn to 29 Oct + £0.83bn forecast ≈ £3.7bn; 2027 =
-  £4.15bn; 2.2× 2020; constraints 90% of 2025.
+- Annual costs chart: *superseded 3 Nov 2026.* The chart now uses NESO's MBSS (headline) basis rather
+  than the daily BSUoS data, which ran about a quarter below NESO's published totals. See
+  `bm-charts/output/data/07_neso_mbss_annual_calendar_year.csv` and `deck/data/annual_balancing_costs.csv`:
+  2026 ≈ £3.4bn to end Oct + £0.83bn forecast ≈ £4.3bn (level with 2022, not a clear record); 2027 = £4.15bn; 1.9× 2020 to October;
+  constraints 70% of 2025.
 - £2.7bn for 2024/25, ~£8bn peak in 2030 and ~£4bn saving if critical projects are brought
   forward: NESO 2025 Annual Balancing Costs Report, pp.18 and 24.
 - BM figures from our Elexon data: £3.15bn Jan–Oct 2026 vs £2.33bn in all of 2025; £121 → £245/MWh

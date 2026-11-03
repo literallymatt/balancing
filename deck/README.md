@@ -20,7 +20,7 @@ uploaded to the artifact as images (the `/_blob/...` paths):
 | `june23` | `05_focus_day_2026-06-23.png` |
 
 If the charts are regenerated, re-upload the PNGs and update those `src` paths.
-Annual cost figures (annual costs, wind bids and one-national-price slides) are calendar-year totals from NESO's Daily BSUoS Cost Data, produced by `uv run neso-costs` in bm-charts (`output/data/06_neso_annual_balancing_costs_calendar_year.csv`). Figures on the slides quoted from the BM data (for example £3.15bn paid out
+Annual cost figures on the annual costs slide are calendar-year totals on NESO's headline basis, from the Monthly Balancing Services Summary (MBSS), produced by `uv run neso-mbss` in bm-charts (`output/data/07_neso_mbss_annual_calendar_year.csv`). MBSS runs to August 2026, so the 2026 bar adds NESO's September outturn and daily data for October plus an estimate of October ancillary services (see `data/annual_balancing_costs.csv`). The older daily BSUoS series (`uv run neso-costs`) covers only BM actions and trades and runs about a quarter below NESO's published totals. Figures on the slides quoted from the BM data (for example £3.15bn paid out
 Jan–Oct 2026) come from `bm-charts/output/data/` as of the 1 Nov 2026 run.
 
 ## Structure

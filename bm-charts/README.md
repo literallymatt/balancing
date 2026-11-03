@@ -87,6 +87,27 @@ costs (which also include trades outside the BM, reserve and ancillary
 services contracts). Expect the totals to sit below the £bn figures on the
 annual costs slide.
 
+## NESO annual costs on the MBSS basis
+
+```bash
+uv run neso-mbss
+```
+
+This pulls NESO's Monthly Balancing Services Summary, the series behind its
+headline annual costs, from the links on its public balancing costs page. It
+writes `output/data/07_neso_mbss_annual_calendar_year.csv`, plus monthly and
+financial-year CSVs in `output/data/full/`.
+
+- **Constraints** is NESO's whole Constraints category: thermal, voltage, ROCOF
+  and intertrips. **Thermal** is the workbooks' `BM - Transmission` and
+  `Trades - Transmission` lines. The CSVs NESO has used since April 2025 don't
+  split it out, so thermal is empty from then on.
+- **April 2017 to March 2019** isn't in the MBSS files on that page. Those months
+  are rebuilt from daily BSUoS costs plus MBSS daily ancillary services, which
+  lands within about 2% of MBSS where the two overlap. See `rebuilt_months`.
+- **The daily BSUoS data alone runs lower** because it leaves out ancillary
+  services, so `neso-costs` won't match NESO's headline figures.
+
 ## Tests
 
 ```bash

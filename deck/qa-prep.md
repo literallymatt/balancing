@@ -18,15 +18,20 @@ Likely questions for the talk, grouped by theme, with a short answer to lead wit
 ## 1. The cost numbers (slide 3)
 
 ### Why do your numbers differ from NESO's headline figures?
-**Say:** We use NESO's daily BSUoS cost data because it's the only NESO series we can cut into calendar years. It covers fewer cost lines than the annual balancing cost reports, so it sits a bit lower.
-**If pressed:** For 2024/25 it's about £2.1bn on our basis against £2.7bn in NESO's report. The trend is the same on either basis.
+**Say:** They don't, apart from being cut into calendar years. The chart uses NESO's Monthly Balancing Services Summary, the same data behind NESO's headline figures, so 2024/25 comes to £2.7bn on our numbers, as NESO reports.
+**If pressed:** Some published charts use NESO's daily BSUoS cost data instead. That only covers Balancing Mechanism actions and trades, and leaves out the contracted services NESO buys (reserve and response contracts, reactive power for voltage, stability and black start), so it runs about a quarter lower: £2.1bn for 2024/25. On that narrower basis constraints look like 90% of costs; on the full basis they're about 70%. The 2026 bar uses NESO's early figures for September and October plus a small estimate for contracted services, because the monthly summary runs to August. 2018 and early 2019 are rebuilt from NESO's daily data, because the public monthly files start in April 2019.
+
+### Is 2026 just the gas price spike (the Iran war)? Will 2027 be cheaper?
+**Say:** Gas prices are a big part of this autumn's jump, because most constraint costs are paying gas plants to turn up, and dearer gas makes each action dearer. But the volume of constraint actions comes from the network, and that doesn't go away when gas prices fall. 2026 and 2027 both come out at about £4.2–4.3bn.
+**If pressed:** On our Elexon data, accepted BM offers cost £1.61bn in Jan–Oct 2025 and £2.81bn in Jan–Oct 2026; roughly £0.7bn of that rise is price and £0.5bn volume (our own split, offers only). Average offer prices went from about £121/MWh in Oct 2025 to £245/MWh in Oct 2026. NESO also cites the Ormen Lange outage in Norway and a heavy network outage programme this year, so not all of it is the war. NESO's 2027 forecast range is wide (about £2.7bn to £5.7bn), and costs were already £3.0bn in 2025, before the gas spike.
+**For customers:** BSUoS is a fixed tariff, so this year's overspend reaches bills later. NESO's November forecast shows an indicative £27/MWh for Apr–Sep 2027, against about £12.5/MWh now, including carried-forward under-recovery. **[check]** NESO calls this highly indicative until final tariffs in December.
 
 ### Why is there a gap for 2028 and 2029?
 **Say:** NESO hasn't published annual forecasts for those years. Rather than invent numbers, I've left them blank.
-**If pressed:** 2026 (Nov and Dec) and 2027 come from NESO's October 2026 BSUoS forecast. 2030 is from NESO's 2025 Annual Balancing Costs Report. The bases differ from our actuals, so treat the orange bars as direction of travel.
+**If pressed:** 2026 (Nov and Dec) and 2027 come from NESO's October 2026 BSUoS forecast. 2030 is from NESO's 2025 Annual Balancing Costs Report. Both cover the same cost lines as our actuals, but they're forecasts, so treat the orange bars as direction of travel.
 
 ### What drove the 2022 spike, and is 2026 the same?
-**Say:** No. 2022 was a price spike: gas crisis prices made reserve and other services expensive. 2026 is a volume and location problem: nearly all of it is constraints.
+**Say:** No. 2022 was a price spike: gas crisis prices made reserve and other services expensive. 2026 is a volume and location problem: more than three quarters of it is constraints.
 
 ### Is the £8bn by 2030 realistic?
 **Say:** It's NESO's own projection, not ours. It's driven by wind connecting faster than the network is reinforced, and NESO says around £4bn of it is avoidable if critical network projects are delivered earlier.
