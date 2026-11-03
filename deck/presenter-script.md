@@ -32,7 +32,7 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 - The BM analysis is our own, from Elexon's public data. Everything else is sourced on the slides.
 
 **Detail**
-- Open with the hook: every pound NESO spends balancing the grid ends up on our customers' bills through BSUoS, and that number has gone from £1.8bn in 2020 to about £3.4bn so far this year, heading for a record of about £4.3bn.
+- Open with the hook: every pound NESO spends balancing the grid ends up on our customers' bills through BSUoS, and that number has gone from £1.8bn in 2020 to about £3.4bn so far this year, heading for about £4.3bn.
 - Set the frame you'll return to at the end: NESO's problem is increasingly about *where* power is, not just *how much*, and flexible demand in the right place is one of the cheapest fixes.
 - Keep it short. Don't read the subtitle out.
 
@@ -40,18 +40,18 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 
 ## Slide 3 · Annual balancing costs (3:00)
 
-### 2026 costs reached £3.4bn by October, 1.9× 2020's £1.8bn, heading for a record £4.3bn
+### 2026 costs reached £3.4bn by October, 1.9× 2020's £1.8bn, heading for about £4.3bn
 
 **Broad points**
 - £1.1bn in 2018, £1.8bn in 2020, £4.2bn at the 2022 gas-crisis peak.
 - The blue part is constraints: £0.6bn in 2018, £2.1bn in 2025, which is 70% of the year, and the share is still climbing.
-- 2026 is at about £3.4bn with two months to go: nearly double 2020, and more than three quarters of it is constraints. On NESO's forecast the full year is about £4.3bn, 2.4 times 2020 and just above the 2022 record.
+- 2026 is at about £3.4bn with two months to go: nearly double 2020, and more than three quarters of it is constraints. On NESO's forecast the full year is about £4.3bn, 2.4 times 2020 and level with the 2022 peak.
 - The orange bars are NESO's forecasts, not our data: the last two months of 2026 (taking the year to about £4.3bn), about £4.2bn for 2027, and a possible peak near £8bn by 2030.
 
 **Detail**
 - Walk the chart left to right. Point at 2022 and explain it was a *price* spike: reserve and other services got expensive during the gas crisis. It wasn't that NESO needed to do more balancing.
 - Then point at the blue segments growing. Define constraint costs once, simply: the money NESO pays because the network can't carry power from where it's made to where it's used.
-- 2026: about £3.4bn spent by the end of October, and September and October alone cost over £1.1bn. Add NESO's own forecast for November and December and the year lands around £4.3bn, which would beat 2022's £4.2bn.
+- 2026: about £3.4bn spent by the end of October, and September and October alone cost over £1.1bn. Add NESO's own forecast for November and December and the year lands around £4.3bn, level with 2022's £4.2bn. Part of the autumn jump is gas prices; the constraint volume is a network problem that stays when prices fall. Don't call 2026 a record: it's within the estimate's margin of 2022 and of NESO's 2027 forecast.
 - Forward look: NESO's October BSUoS forecast puts 2027 at about £4.2bn. NESO hasn't published annual numbers for 2028 and 2029, which is why there's a gap. Its 2025 Annual Balancing Costs Report says costs could peak around £8bn by 2030 as wind connects faster than the network is reinforced, and that about £4bn of that is avoidable if key network projects come forward.
 - One honest caveat, said once and quickly: the bars are on the same basis as NESO's headline figures (its Monthly Balancing Services Summary, which gives £2.7bn for 2024/25, as NESO reports). That summary runs to August, so September and October are NESO's early figures plus a small estimate and 2026 may move a little. Treat the forecasts as direction of travel.
 - Land the message: constraints are the story, and constraints are a location problem.
