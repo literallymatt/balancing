@@ -109,8 +109,8 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 - The key point on bids: a gas plant turning down usually pays NESO back because it saves fuel. Wind bids negative, because turning down loses it output and subsidy, so NESO pays it to stop. That's why constraint costs grow with wind.
 - Emphasise that the cheapest action isn't always taken. A cheap unit in the wrong place, or too slow, loses to a dearer one that works. Location matters.
 - Timeline strip, three phases for one half-hour period T:
-  - **Before Gate Closure (up to T−60):** plans and prices go to NESO and can still change. Initial PNs by 11:00 the day before are a planning view, not binding.
-  - **Gate Closure to end of period (T−60 to T+30):** FPNs and prices are fixed. NESO accepts bids and offers, mostly close to real time. Limits (MEL, MIL, ramp rates) can still be redeclared.
+  - **Before Gate Closure (before T−60):** units trade and can still change their plans and their bid and offer prices.
+  - **Gate Closure to end of period (T−60 to T+30):** FPNs fix each unit's plan, and prices are locked. NESO accepts bids and offers, mostly close to real time. If asked: limits (MEL, MIL, ramp rates) can still be redeclared after Gate Closure.
   - **Settlement (days later):** Elexon pays accepted actions, cashes out imbalance, and the cost goes to BSUoS.
 - Plant the P342 point now, because slide 11 comes back to it: since 2017, parties can keep trading and notifying contracts to Elexon right up to the start of the half-hour. Those trades change who's long or short for settlement, but not what units physically do, because the plans NESO works from are already locked.
 - Customer angle in one line: BSUoS sits entirely on demand, so this is our customers' money.
