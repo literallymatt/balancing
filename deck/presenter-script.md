@@ -177,21 +177,25 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 
 ---
 
-## Slide 14 · How I&C flexibility helps NESO, now and after RNP (2:30, then questions)
+## Slide 14 · How I&C flexibility helps NESO, and gets paid for it (2:30, then questions)
 
-### Flexible demand is the visible, controllable resource in the right place that NESO will keep paying for
+### Flexible demand is the visible, controllable resource in the right place that NESO will keep paying for, and RNP opens more ways to get paid
 
 **Broad points**
-- **Energy balancing, "steps down at the peak":** today DFS turn-down, Capacity Market, BM offers via a VLP. With RNP, 15-minute settlement pays for fast, accurate response.
-- **Constraints, "moves on the right side":** today DFS constraint actions (which replaced NESO's Local Constraint Market on 7 October) and BM bids, but demand earns 0.3% of turn-down pay. With RNP, the Demand for Constraints market and the levy-free trial pay for location.
-- **Visibility, "a site NESO can see":** today most sites are below the BM threshold. With RNP, new assets join the BM from 10 MW and new on-site generation and batteries become visible from 1 MW, so prepared sites are first in line.
+- **Energy balancing, "steps down at the peak":** today DFS turn-down (from 0.1 MW), Capacity Market, BM offers via a VLP. With RNP, 15-minute settlement from 2032 pays for fast, accurate response instead of averaging it away.
+- **Constraints, "moves on the right side":** today DFS constraint actions (which replaced NESO's Local Constraint Market on 7 October) and BM bids, but demand earns 0.3% of turn-down pay and wind 94%. With RNP, the Demand for Constraints market (delivery from 2028) and the levy-free trial pay for location, and unit-level bidding, if adopted, could follow.
+- **Visibility, "a site NESO can see":** today most sites are below the BM threshold, so a VLP is the only way in. With RNP, new assets join the BM from 10 MW (2030) and new on-site generation and batteries share data from 1 MW (2032). NESO can only pick a site it can see.
+- **Not all upside:** trading ending at Gate Closure and FPNs having to match trades both raise imbalance risk. A site that can flex within the period helps manage it.
 - Bottom line: reform won't remove congestion, so NESO will keep paying visible sites in the right place to move.
 
 **Detail**
 - Tie each column back to an earlier slide: energy balancing to slide 4, constraints to slide 8, visibility to the threshold row on slide 11.
 - Energy: a site that cuts load or runs its own CHP or battery at a tight evening peak saves NESO from buying BM offers, usually gas, and the average accepted offer price roughly doubled over the past year (about £121 to £245/MWh, our BM analysis).
 - Constraints is the big one: wind gets about 94% of the turn-down money and demand about 0.3%, so there's a lot of room for demand to compete. NESO's Demand for Constraints market (new flexible demand in Scotland, up to 10-year contracts) started procurement in October, with contracts due in April 2028 and delivery from 2028, and government is trialling removing final consumption levies for demand in constrained areas (parts of Scotland and the East of England).
-- Visibility: a metered, controllable site is exactly what NESO says it's short of. Sites that are already metered, controllable and signed up will be first in line when thresholds drop.
+- Visibility: a metered, controllable site is exactly what NESO says it's short of. Be precise about the thresholds: full BM from 10 MW is for *new* assets (existing ones only from 30 MW, and only if connected under G99). The 1 MW tier is new generation, which includes batteries and CHP, and it means sharing data, not bidding, so it earns nothing by itself. Demand-only sites under 10 MW aren't covered and keep using an aggregator or VLP. Our view (not NESO's words) is that sites already metered, controllable and signed up will be easiest for NESO to pick.
+- Dates: say them out loud, and say they're NESO's planned dates, not decisions.
+- Unit-level bidding: NESO recommends on it, with dispatch reform, at the end of 2027, and it was the least popular reform in the Call for Input. If adopted, it lets NESO pick units by location before Gate Closure, which is what lets a well-placed site compete head-on with wind.
+- Not all upside: ending trading at Gate Closure (reversing P342) and FPN matching are costs for suppliers like us; NESO says traders "will need to finalise trades earlier and manage higher imbalance risk". Both drew industry pushback, and FPN matching is the least certain of the five. But if they happen, a customer site that can flex within the period is worth more, because it helps manage that risk. "Demand for Constraints" and the levy-free trial sit alongside NESO's balancing reforms rather than being part of them, so don't call them "the reforms".
 - Close by summarising the talk in four lines:
   1. Balancing costs are rising fast, and constraints are now almost all of it.
   2. The causes are structural: a network that hasn't kept up, one national price that ignores it, and assets NESO can't see.
