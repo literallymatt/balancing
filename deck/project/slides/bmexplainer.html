@@ -1,4 +1,4 @@
-<section id="bmexplainer" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<section id="bmexplainer" data-transition="fade" style="background:#F6F4EE;color:#1B2638;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:36px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B34D12;font-weight:600">02 · NESO’s role</p>
 <h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1.1;color:#14213D">How the Balancing Mechanism works</h2>
@@ -13,28 +13,23 @@
 <p style="font-size:32px;line-height:1.4;color:#4A5568">Generate less or use more, from the FPN down to the MIL. Gas pays NESO back; wind bids negative, so NESO pays it</p>
 </div>
 </div>
-<div style="display:flex;flex-direction:column;gap:16px;background:#14213D;padding:24px 40px 28px;border-radius:16px">
-<p style="font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#C9D3E3;font-weight:600">The BM window for one half-hour period</p>
-<div style="display:flex;gap:32px">
-<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #4A5568;padding-top:16px">
-<p style="font-size:22px;font-weight:600;color:#F2994A">Day ahead</p>
-<p style="font-size:24px;font-weight:600;color:#FFFFFF">Initial plans to NESO</p>
-<p style="font-size:22px;line-height:1.35;color:#C9D3E3">Initial Physical Notifications (PNs) due by 11:00; plans and prices can change until Gate Closure</p>
+<div style="display:flex;flex-direction:column;gap:20px;background:#14213D;padding:24px 40px 32px;border-radius:16px">
+<p style="font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#C9D3E3;font-weight:600">One half-hour settlement period, starting at T</p>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:6px solid #4A5568;padding:20px 0 24px">
+<p style="font-size:22px;font-weight:600;color:#F2994A">Up to T − 60</p>
+<p style="font-size:28px;font-weight:600;color:#FFFFFF">Before Gate Closure</p>
+<p style="font-size:22px;line-height:1.35;color:#C9D3E3">Plans and bid and offer prices go to NESO and can still change. Initial PNs are due by 11:00 the day before</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #F2994A;padding-top:16px">
-<p style="font-size:22px;font-weight:600;color:#F2994A">T − 60 min</p>
-<p style="font-size:24px;font-weight:600;color:#FFFFFF">Gate Closure: window opens</p>
-<p style="font-size:22px;line-height:1.35;color:#C9D3E3">FPNs and bid and offer prices are fixed; MEL, MIL and ramp rates can still be redeclared</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #F2994A;padding-top:16px">
+<div style="flex:1.3;display:flex;flex-direction:column;gap:8px;background:#22335A;border-top:6px solid #F2994A;border-radius:8px;padding:20px 28px 24px">
 <p style="font-size:22px;font-weight:600;color:#F2994A">T − 60 to T + 30</p>
-<p style="font-size:24px;font-weight:600;color:#FFFFFF">NESO accepts bids and offers</p>
-<p style="font-size:22px;line-height:1.35;color:#C9D3E3">From Gate Closure until the period ends; most are sent close to real time</p>
+<p style="font-size:28px;font-weight:600;color:#FFFFFF">Gate Closure to end of period</p>
+<p style="font-size:22px;line-height:1.35;color:#C9D3E3">Plans and prices are fixed. NESO accepts bids and offers, mostly close to real time; units can still redeclare MEL, MIL and ramp rates</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:6px;border-top:6px solid #4A5568;padding-top:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:6px solid #4A5568;padding:20px 0 24px">
 <p style="font-size:22px;font-weight:600;color:#F2994A">Days later</p>
-<p style="font-size:24px;font-weight:600;color:#FFFFFF">Elexon settles</p>
-<p style="font-size:22px;line-height:1.35;color:#C9D3E3">Pays accepted bids and offers, cashes out imbalances, and the cost goes to BSUoS</p>
+<p style="font-size:28px;font-weight:600;color:#FFFFFF">Settlement</p>
+<p style="font-size:22px;line-height:1.35;color:#C9D3E3">Elexon pays accepted bids and offers, cashes out imbalances, and the cost goes to BSUoS</p>
 </div>
 </div>
 </div>
