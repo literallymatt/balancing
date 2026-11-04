@@ -2,7 +2,7 @@
 
 **Rising costs and the role of flexibility** · about 20 minutes · November 2026
 
-This covers the nine visible slides only, using the deck's own numbering: 1, 3, 4, 5, 6, 8, 11, 12 and 14. Slides 2, 7, 9, 10 and 13 are hidden, so a few bridging lines below carry the points those slides used to make (REMA and zonal pricing, and invisible assets).
+This covers the ten visible slides only, using the deck's own numbering: 1, 3, 4, 5, 6, 8, 11, 12, 14 and 21. Slides 2, 7, 9, 10 and 13 are hidden, so a few bridging lines below carry the points those slides used to make (REMA and zonal pricing, and invisible assets).
 
 Each slide has a **heading** (the one thing the room should remember), a **time budget**, the **broad points** to hit, and then **detail** to say in your own words. Figures are from the slides and their speaker notes.
 
@@ -12,13 +12,14 @@ Each slide has a **heading** (the one thing the room should remember), a **time 
 | 3 | Annual balancing costs | 3:00 | 4:00 |
 | 4 | Energy vs system balancing | 2:00 | 6:00 |
 | 5 | The market trades; NESO makes it work | 2:00 | 8:00 |
-| 6 | How the Balancing Mechanism works | 3:00 | 11:00 |
-| 8 | The market trades as if the wires were unlimited | 2:30 | 13:30 |
-| 11 | NESO's balancing reforms | 2:30 | 16:00 |
-| 12 | Reform timeline | 1:30 | 17:30 |
-| 14 | How I&C flexibility helps | 2:30 | 20:00 |
+| 6 | How the Balancing Mechanism works | 2:30 | 10:30 |
+| 8 | The market trades as if the wires were unlimited | 2:30 | 13:00 |
+| 11 | NESO's balancing reforms | 2:30 | 15:30 |
+| 12 | Reform timeline | 1:30 | 17:00 |
+| 14 | How I&C flexibility helps | 2:00 | 19:00 |
+| 21 | Five things to take away | 1:00 | 20:00 |
 
-If you're running long, slide 6 is the easiest to trim: skip the day-ahead and settlement boxes and just say "Gate Closure is an hour ahead, and NESO can act from then until the end of the half-hour".
+Slide 6 is budgeted tight at 2:30. If you're running long, it's still the easiest to trim: skip the day-ahead and settlement boxes and just say "Gate Closure is an hour ahead, and NESO can act from then until the end of the half-hour".
 
 ---
 
@@ -94,7 +95,7 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 
 ---
 
-## Slide 6 · How the Balancing Mechanism works (3:00)
+## Slide 6 · How the Balancing Mechanism works (2:30)
 
 ### NESO buys its way back to a workable plan, one half-hour at a time
 
@@ -177,7 +178,7 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 
 ---
 
-## Slide 14 · How I&C flexibility helps NESO, and gets paid for it (2:30, then questions)
+## Slide 14 · How I&C flexibility helps NESO, and gets paid for it (2:00)
 
 ### Flexible demand is the visible, controllable resource in the right place that NESO will keep paying for, and RNP opens more ways to get paid
 
@@ -196,9 +197,24 @@ If you're running long, slide 6 is the easiest to trim: skip the day-ahead and s
 - Dates: say them out loud, and say they're NESO's planned dates, not decisions.
 - Unit-level bidding: NESO recommends on it, with dispatch reform, at the end of 2027, and it was the least popular reform in the Call for Input. If adopted, it lets NESO pick units by location before Gate Closure, which is what lets a well-placed site compete head-on with wind.
 - Not all upside: ending trading at Gate Closure (reversing P342) and FPN matching are costs for suppliers like us; NESO says traders "will need to finalise trades earlier and manage higher imbalance risk". Both drew industry pushback, and FPN matching is the least certain of the five. But if they happen, a customer site that can flex within the period is worth more, because it helps manage that risk. "Demand for Constraints" and the levy-free trial sit alongside NESO's balancing reforms rather than being part of them, so don't call them "the reforms".
-- Close by summarising the talk in four lines:
-  1. Balancing costs are rising fast, and constraints are now almost all of it.
-  2. The causes are structural: a network that hasn't kept up, one national price that ignores it, and assets NESO can't see.
-  3. Zonal pricing is off the table; NESO's reforms help, but by its own account they won't remove congestion.
-  4. Our customers' flexibility is a direct answer, and the routes to be paid for it are opening up.
+- Bridge to the summary: "So, to pull the whole talk together."
+
+---
+
+## Slide 21 · Five things to take away (1:00, then questions)
+
+### Costs are up because the grid can't move the power, and flexible demand gets paid to help
+
+**Broad points**
+1. **Costs are up:** £3.4bn by October 2026, nearly double 2020's £1.8bn, heading for about £4.3bn.
+2. **Constraints are most of it:** 70% of 2025's cost and over three quarters of 2026 so far.
+3. **The market doesn't see the grid:** one national price trades as if the wires were unlimited, so NESO pays twice in the BM to undo it.
+4. **Reforms help, but won't remove congestion:** zonal pricing is out; RNP brings 15-minute settlement, lower BM thresholds and a firmer Gate Closure, from 2029 if approved.
+5. **I&C flexibility gets paid to fix it:** NESO will keep paying visible sites in the right place to move, through DFS, the BM and new constraint markets.
+
+**Detail**
+- One sentence per point, each a callback: 1 and 2 to slide 3, 3 to slide 8, 4 to slides 11 and 12, 5 to slide 14. Don't add new numbers here.
+- Point 2: say "most of it", not "almost all of it". On NESO's headline basis constraints were 70% of 2025 and about 78% of 2026 to October. (On NESO's narrower "thermal constraints" line they were about 63% of 2024/25; that's the figure if someone quotes NESO's annual report back at you.)
+- Point 4: the reform dates are NESO's planned dates, not decisions. Demand for Constraints and the levy-free trial sit alongside NESO's reforms, so point 5's "new constraint markets" is the right home for them.
+- Point 5 is the line to finish on: NESO will keep paying someone to move, and a visible, controllable site in the right place is that someone.
 - "Happy to take questions."
